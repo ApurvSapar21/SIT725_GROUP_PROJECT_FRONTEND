@@ -1,0 +1,4 @@
+{
+    "appService.defaultWebAppToDeploy": "/subscriptions/d90e004b-a6ef-4b9a-a024-b08c92ad782b/microsoft.web/sites/subscriptions/d90e004b-a6ef-4b9a-a024-b08c92ad782b/resourceGroups/FoodAllergygroup/providers/Microsoft.Web/sites/foodallergynew",
+    "appService.deploySubpath": "dist\\testapp"
+}

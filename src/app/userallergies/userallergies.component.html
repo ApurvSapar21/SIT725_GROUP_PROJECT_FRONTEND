@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <title>Food Guards - Allergen prevention Web Application</title>
+      <!-- Vendor Stylesheets -->
+      
+      <link rel="stylesheet" href="/assets/static/css/bootstrap.min.css">
+      <link rel="stylesheet" href="/assets/static/css/animate.min.css">
+      <link rel="stylesheet" href="/assets/static/css/magnific-popup.css">
+      <link rel="stylesheet" href="/assets/static/css/slick.css">
+      <link rel="stylesheet" href="/assets/static/css/slick-theme.css">
+      
+      <link rel="stylesheet" href="/assets/static/css/flaticon.css">
+      <link rel="stylesheet" href="/assets/static/css/all.min.css">
+      
+      <link rel="stylesheet" href="/assets/static/css/style.css">
+      
+   </head>
+   <body>
+      <!--
+       <nav class="navbar">
+          <div class="container">
+             <a class="navbar-brand" href="/"><img src="/assets/static/picture/food_guards_logo.png" alt="logo"></a>
+             <ul class="nav nav-tabs">
+               <li class="nav-item">
+                 <a class="nav-link active" href="https://foodallergyprod.azurewebsites.net/">Home Page</a>
+               </li>
+               <li class="nav-item">
+                 <a class="nav-link" [routerLink]="['/barcodescan']">Barcode Scanner</a>
+               </li>
+             </ul>
+            
+          </div>
+       </nav>
+      -->
+      <header class="main-header header-1 can-sticky">
+         <nav class="navbar" >
+            <div class="container">
+               <a class="navbar-brand" href="/"><img src="/assets/static/picture/food_guards_logo.png" alt="logo"></a><!-- Menu -->
+               <ul class="nav nav-tabs">
+                  <li class="nav-item">
+                    <a class="nav-link active" href="https://foodallergyprod.azurewebsites.net/">Home Page</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" [routerLink]="['/barcodescan']">Barcode Scanner</a>
+                  </li>
+                </ul>
+               
+            </div>
+         </nav>
+      </header>
+    <!-- Header End --><!-- Banner Start -->
+    <br/><br/><br/>
+    <div class="banner" style="background-color:CDF0EA">
+         <div class="container-fluid">
+            <mat-card class="example-card" style="max-width: 800px; margin-left: 7%;">
+            <div class="row">
+              <div>
+               <div class="container">
+                  <h1 class="text-black" style="margin-left: 30%">Enter your Child Allergens</h1>
+                  <div style="margin-left: 30%">
+                     <form (submit)="editAllergyRolesSubmit()">
+                       <div *ngFor="let item of AllergiesRoles">
+                           <label>
+                              <mat-checkbox class="example-margin" value="{{item.Id}}" [(ngModel)]="item.Checked" [name]="item.Name">{{item.Name}}</mat-checkbox>
+                           </label>
+                           <!--<input type="checkbox" value="{{item.Id}}" [(ngModel)]="item.Checked" [name]="item.Name"/> &nbsp;
+                              <span innerHTML="{{item.Name}}"></span>
+                           </label>
+                        -->
+                       </div>
+                       <button type="button" class="btn btn-primary" type="submit">Submit</button> &nbsp;&nbsp;
+                       </form>
+                   </div>      
+               </div>
+               </div>
+            </div>
+            <br/>
+            <mat-divider inset></mat-divider>
+            <mat-card-footer>
+               <mat-progress-bar mode="indeterminate"></mat-progress-bar>
+             </mat-card-footer>
+         </mat-card>
+         
+         
+          </div>
+      </div>
+
+         <footer>
+            <div class="footer-bottom">
+               <div class="container">
+                  <p class="m-0"> &copy; 2022 - Food Guards</p>
+               </div>
+            </div>
+         </footer>
+
+      
+      <!-- Footer End --><!-- Vendor Scripts -->
+      <script src="/assets/static/js/jquery-3.4.1.min.js"></script>
+      <script src="/assets/static/js/popper.min.js"></script>
+      <script src="/assets/static/js/waypoint.js"></script>
+      <script src="/assets/static/js/bootstrap.min.js"></script>
+      <script src="/assets/static/js/jquery.magnific-popup.min.js"></script>
+      <script src="/assets/static/js/jquery.slimScroll.min.js"></script>
+      <script src="/assets/static/js/imagesloaded.min.js"></script>
+      <script src="/assets/static/js/jquery.steps.min.js"></script>
+      <script src="/assets/static/js/jquery.countdown.min.js"></script>
+      <script src="/assets/static/js/isotope.pkgd.min.js"></script>
+      <script src="/assets/static/js/slick.min.js"></script>
+      <script src="/assets/static/js/main.js"></script>
+   </body>
+</html>

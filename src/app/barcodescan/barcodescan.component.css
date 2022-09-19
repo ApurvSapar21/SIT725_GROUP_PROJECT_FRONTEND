@@ -1,0 +1,10 @@
+.btn-circle.btn-xl {
+    width: 150px;
+    height: 150px;
+    padding: 10px 16px;
+    border-radius: 35px;
+    font-size: 30px;
+    line-height: 1.33;
+}
+
+
