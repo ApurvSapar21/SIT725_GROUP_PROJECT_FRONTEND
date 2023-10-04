@@ -1,0 +1,35 @@
+    <!-- Header Section -->
+    <div class="container-fluid bg-lightgreen text-black py-3">
+        <div class="row align-items-center">
+            <div class="col-md-2">
+                <img src="assets/static/image/Angel-Logo-Designs18.jpg" alt="KnowB4UEat Logo"
+                    style="max-height: 100%; max-width: 100%;">
+            </div>
+            <div class="col-md-10">
+                <div class="float-md-end">
+                    <h1 style="font-weight: bold;">KnowB4UEat</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <nav class="navbar navbar-expand navbar-dark bg-dark text-white">
+    </nav>
+<br>
+
+
+<div class="login-container">
+    <h2>Login</h2>
+    <form #loginForm="ngForm" (ngSubmit)="onLogin(loginForm)">
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" [(ngModel)]="loginData.email" required>
+        </div>
+        <div class="form-group">
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" [(ngModel)]="loginData.password" required>
+        </div>
+        <button type="submit" class="btn btn-primary btn-lg">Login</button>
+    </form>
+    <a [routerLink]="['/home']" class="btn btn-primary btn-lg mt-3">Back to Home</a>
+</div>
