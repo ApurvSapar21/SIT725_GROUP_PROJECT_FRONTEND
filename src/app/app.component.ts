@@ -11,10 +11,10 @@ export interface Cartoon {
 
 @Component({
   selector: 'app-root',
-  templateUrl: './app.component.html',
+  templateUrl: './app.component.html', // Updated path to your HTML file
   styleUrls: ['./app.component.css']
 })
-export class AppComponent  {
+export class AppComponent {
   AllergiesRoles = [
     {
       Id: 1,
@@ -55,26 +55,25 @@ export class AppComponent  {
       Id: 8,
       Name: "Treenut",
       Checked: false
-    }    
+    }
   ]
 
-  allowedFormats = [ BarcodeFormat.QR_CODE, BarcodeFormat.EAN_13, BarcodeFormat.CODE_128, BarcodeFormat.DATA_MATRIX /*, ...*/ ];
+  allowedFormats = [BarcodeFormat.QR_CODE, BarcodeFormat.EAN_13, BarcodeFormat.CODE_128, BarcodeFormat.DATA_MATRIX /*, ...*/];
   qrResultString: string;
-  private headers = new HttpHeaders({'Content-Type': 'application/json'});
+  private headers = new HttpHeaders({ 'Content-Type': 'application/json' });
   barcode = {};
 
   userallergies = {}
 
   editAllergyRolesSubmit() {
     console.log(this.AllergiesRoles);
-    this.userallergies = {allergies : this.AllergiesRoles}
+    this.userallergies = { allergies: this.AllergiesRoles }
     console.log(this.userallergies)
-    const upload_allergies$ = this.http.post("https://foodallergyprod.azurewebsites.net/user_allergies",this.userallergies,{headers: this.headers});
+    const upload_allergies$ = this.http.post("https://foodallergyprod.azurewebsites.net/user_allergies", this.userallergies, { headers: this.headers });
     upload_allergies$.subscribe();
   }
-   
-  constructor(private http: HttpClient,private fb: FormBuilder)
-  { }
+
+  constructor(private http: HttpClient, private fb: FormBuilder) { }
 
   clearResult(): void {
     this.qrResultString = "";
@@ -83,20 +82,15 @@ export class AppComponent  {
   result: any
   onCodeResult(resultString: string) {
     this.qrResultString = resultString;
-    this.barcode = {barcode : this.qrResultString}
+    this.barcode = { barcode: this.qrResultString }
     console.log("res" + this.qrResultString)
-    const upload$ = this.http.post("https://foodallergyprod.azurewebsites.net/barcode_post",this.barcode,{headers: this.headers});
+    const upload$ = this.http.post("https://foodallergyprod.azurewebsites.net/barcode_post", this.barcode, { headers: this.headers });
     //upload$.subscribe();
 
     upload$.subscribe(res => {
       this.result = res
       alert(this.result.result)
       console.log(this.result);
-      });
+    });
   }
-
-  
-
-  
-
 }
